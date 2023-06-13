@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>首页</h1>
+<a th:if="${session.username == null}" href="http://localhost:8081/login?target=http://localhost:8080/">登录</a>
+<a th:if="${session.username != null}" href="/out"><div th:text="${session.username}">退出</div></a>
+<a th:href="@{'http://localhost:8082/aaa?token='+${session.token == null?'':session.token}}">访问aaa系统</a>
+<a th:href="@{'http://localhost:8083/bbb?token='+${session.token == null?'':session.token}}">访问bbb系统</a>
+</body>
+</html>

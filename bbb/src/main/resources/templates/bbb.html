@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bbb</title>
+</head>
+<body>
+<h1>bbb</h1>
+<a th:if="${session.username == null}" href="http://localhost:8081/login?target=http://localhost:8083/bbb">登录</a>
+<a th:if="${session.username != null}" href=""><div th:text="${session.username}"></div>退出</a>
+</body>
+</html>
